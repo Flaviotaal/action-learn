@@ -68,7 +68,8 @@ jobs:
 
     - name: Set up Api_key openai    
       run: |- 
-        kubectl create secret generic openai-secret --from-literal=API_KEY=${{secrets.OPENAI_API}} || true
+        kubectl delete secret openai-secret --ignore-not-found
+        kubectl create secret generic openai-secret --from-literal=API_KEY=${{secrets.OPENAI_API}}
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
