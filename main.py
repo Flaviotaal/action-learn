@@ -22,7 +22,7 @@ prompt_template = PromptTemplate.from_template("You are a helpful assistant answ
 
 @app.get("/")
 def welcome():
-    return {"message":"Welcome to ChatGpt AI application!"}
+    return {"message":"Welcome to ChatGpt AI application v2!"}
 
 
 @app.get("/home")
